@@ -1,0 +1,18 @@
+@(messages: Seq[String])
+
+@main("Welcome to Play") {
+
+<div>
+@helper.form(action = controllers.routes.Application.add(), args = 'class -> "edit-form", 'enctype -> "multipart/form-data") {
+    <input type="submit" value="Click Here!" />
+}
+
+    <ul>
+        @for(msg <- messages) {
+            <li>@msg</li>
+        }
+
+    </ul>
+</div>
+
+}
